@@ -5,14 +5,14 @@
 {%- if cookiecutter.agent -%}
   {%- set DRV = cookiecutter.agent + '_drv' -%}
   {%- set INTF = cookiecutter.package + '_' + cookiecutter.agent + '_intf' %}
-  {%- set SEQ_ITEM = cookiecutter.agent + '_item' %}                
+  {%- set SEQ_ITEM = cookiecutter.agent + '_item' %}
 {%- endif %}
 
 `ifndef __{{ cookiecutter.package | upper }}_{{ DRV | upper }}_SV__
  `define __{{ cookiecutter.package | upper }}_{{ DRV | upper }}_SV__
 
  `include "{{ cookiecutter.package }}_{{ SEQ_ITEM }}.sv"
-                      
+
 class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
 
    // Containing agent sets variable to avoid multiple lookup
@@ -20,7 +20,7 @@ class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ DRV }}_c)
    `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ DRV }}_c)
-   
+
    function new(string name="{{ DRV }}", uvm_component parent);
       super.new(name, parent);
    endfunction : new
@@ -50,4 +50,4 @@ class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
 
 endclass :  {{ DRV }}_c
 
-`endif // guard  
+`endif // guard

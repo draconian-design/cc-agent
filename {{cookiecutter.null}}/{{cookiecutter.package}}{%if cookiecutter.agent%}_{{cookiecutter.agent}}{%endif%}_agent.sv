@@ -9,7 +9,7 @@
   {%- set MON  = cookiecutter.agent + '_mon'   -%}
   {%- set DRV  = cookiecutter.agent + '_drv'   -%}
   {%- set SQR  = cookiecutter.agent + '_sqr'   -%}
-  {%- set INTF = cookiecutter.package + '_' + cookiecutter.agent + '_intf' %}                 
+  {%- set INTF = cookiecutter.package + '_' + cookiecutter.agent + '_intf' %}
 {%- endif %}
 
 `ifndef __{{ cookiecutter.package | upper }}_{{ NAME | upper }}_SV__
@@ -17,8 +17,8 @@
 
  `include "{{ cookiecutter.package }}_{{ MON }}.sv"
  `include "{{ cookiecutter.package }}_{{ DRV }}.sv"
- `include "{{ cookiecutter.package }}_{{ SQR }}.sv"                      
-                      
+ `include "{{ cookiecutter.package }}_{{ SQR }}.sv"
+
 class {{ NAME }}_c extends uvm_component;
 
    string intf_name;
@@ -27,11 +27,11 @@ class {{ NAME }}_c extends uvm_component;
    {{ MON }}_c mon;
    {{ DRV }}_c drv;
    {{ SQR }}_c sqr;
-   
+
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ NAME }}_c)
     `uvm_field_string(intf_name, UVM_ALL_ON)
    `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ NAME }}_c)
-   
+
    function new(string name="{{ NAME }}", uvm_component parent);
       super.new(name, parent);
    endfunction : new
@@ -58,4 +58,4 @@ class {{ NAME }}_c extends uvm_component;
 
 endclass :  {{ NAME }}_c
 
-`endif // guard  
+`endif // guard

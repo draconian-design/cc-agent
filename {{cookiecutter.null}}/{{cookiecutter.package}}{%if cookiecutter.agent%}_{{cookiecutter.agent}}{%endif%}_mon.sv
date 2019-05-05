@@ -5,24 +5,24 @@
 {%- if cookiecutter.agent -%}
   {%- set MON = cookiecutter.agent + '_mon' -%}
   {%- set INTF = cookiecutter.package + '_' + cookiecutter.agent + '_intf' %}
-  {%- set SEQ_ITEM = cookiecutter.agent + '_item' %}                
+  {%- set SEQ_ITEM = cookiecutter.agent + '_item' %}
 {%- endif %}
 
 `ifndef __{{ cookiecutter.package | upper }}_{{ MON | upper }}_SV__
  `define __{{ cookiecutter.package | upper }}_{{ MON | upper }}_SV__
 
  `include "{{ cookiecutter.package }}_{{ SEQ_ITEM }}.sv"
-                      
+
 class {{ MON }}_c extends uvm_monitor #({{ SEQ_ITEM }}_c);
 
    // Containing agent sets variable to avoid multiple lookup
    virtual {{ INTF }} vif;
 
    uvm_analys_port #({{ SEQ_ITEM }}_c) mon_item_port;
-   
+
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ MON }}_c)
    `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ MON }}_c)
-   
+
    function new(string name="{{ MON }}", uvm_component parent);
       super.new(name, parent);
    endfunction : new

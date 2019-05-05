@@ -10,7 +10,7 @@
 
 `ifndef __{{ cookiecutter.package | upper }}{% if cookiecutter.agent %}_{{ cookiecutter.agent | upper }}{% endif %}_SEQ_LIB_SV__
  `define __{{ cookiecutter.package | upper }}{% if cookiecutter.agent %}_{{ cookiecutter.agent | upper }}{% endif %}_SEQ_LIB_SV__
-                      
+
 typedef class {{ SQR }}_c;
 
 class {{ BASE_SEQ }}_c extends  uvm_sequence #({{ SEQ_ITEM }}_c);
@@ -19,7 +19,7 @@ class {{ BASE_SEQ }}_c extends  uvm_sequence #({{ SEQ_ITEM }}_c);
    `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ BASE_SEQ }}_c)
 
    // `uvm_declare_p_sequencer({{ SQR }}_c)
-   
+
    function new(string name="{{ BASE_SEQ }}", uvm_component parent);
       super.new(name, parent);
    endfunction : new
