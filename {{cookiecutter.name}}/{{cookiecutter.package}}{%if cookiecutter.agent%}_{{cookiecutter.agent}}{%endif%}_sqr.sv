@@ -12,6 +12,7 @@
  `define __{{ cookiecutter.package | upper }}_{{ SQR | upper }}_SV__
 
  `include "{{ cookiecutter.package }}_{{ SEQ_ITEM }}.sv"
+ `include "{{ cookiecutter.package }}{% if cookiecutter.agent %}_{{ cookiecutter.agent }}{% endif %}_seq_lib.sv"
                       
 class {{ SQR }}_c extends uvm_sequencer #({{ SEQ_ITEM }}_c, {{ SEQ_ITEM }}_c);
 
