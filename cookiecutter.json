@@ -1,4 +1,5 @@
 {
     "package" : "mem",
-    "agent" : ""
+    "agent" : "",
+    "dirname" : ""
 }
