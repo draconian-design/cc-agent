@@ -44,7 +44,7 @@ class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
       end
    endtask : driver_thread
 
-   virtual task drive_request({{ SEQ_ITEM }} _item);
+   virtual task drive_request({{ SEQ_ITEM }}_c _item);
       `cmn_fatal(("FIXME driver not implemented"))
    endtask : drive_request
 
