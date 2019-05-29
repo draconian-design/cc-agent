@@ -16,7 +16,7 @@ typedef class {{ SQR }}_c;
 class {{ BASE_SEQ }}_c extends  uvm_sequence #({{ SEQ_ITEM }}_c);
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ BASE_SEQ }}_c)
-   `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ BASE_SEQ }}_c)
+   `uvm_component_utils_end
 
    // `uvm_declare_p_sequencer({{ SQR }}_c)
 

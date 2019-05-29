@@ -20,7 +20,7 @@ class {{ SQR }}_c extends uvm_sequencer #({{ SEQ_ITEM }}_c, {{ SEQ_ITEM }}_c);
    virtual {{ INTF }} vif;
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ SQR }}_c)
-   `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ SQR }}_c)
+   `uvm_component_utils_end
 
    function new(string name="{{ SQR }}", uvm_component parent);
       super.new(name, parent);

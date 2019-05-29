@@ -19,7 +19,7 @@ class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
    virtual {{ INTF }} vif;
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ DRV }}_c)
-   `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ DRV }}_c)
+   `uvm_component_utils_end
 
    function new(string name="{{ DRV }}", uvm_component parent);
       super.new(name, parent);

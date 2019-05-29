@@ -21,7 +21,7 @@ class {{ MON }}_c extends uvm_monitor #({{ SEQ_ITEM }}_c);
    uvm_analys_port #({{ SEQ_ITEM }}_c) mon_item_port;
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ MON }}_c)
-   `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ MON }}_c)
+   `uvm_component_utils_end
 
    function new(string name="{{ MON }}", uvm_component parent);
       super.new(name, parent);

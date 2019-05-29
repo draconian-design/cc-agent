@@ -30,7 +30,7 @@ class {{ NAME }}_c extends uvm_component;
 
    `uvm_component_utils_begin({{ cookiecutter.package }}_pkg::{{ NAME }}_c)
     `uvm_field_string(intf_name, UVM_ALL_ON)
-   `uvm_component_utils_end({{ cookiecutter.package }}_pkg::{{ NAME }}_c)
+   `uvm_component_utils_end
 
    function new(string name="{{ NAME }}", uvm_component parent);
       super.new(name, parent);
