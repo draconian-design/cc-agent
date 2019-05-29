@@ -47,7 +47,7 @@ class {{ MON }}_c extends uvm_monitor #({{ SEQ_ITEM }}_c);
       {{ SEQ_ITEM }}_c item;
       `cmn_fatal(("FIXME monitor not implemented"))
       forever begin
-         @(this.vif_mon_cb);
+         @(this.vif.mon_cb);
          item = {{ SEQ_ITEM }}_c::type_id::create("item");
          `cmn_dbg(300, ("MON: %s", item.convert2string()))
          this.mon_item_port.write(item);
