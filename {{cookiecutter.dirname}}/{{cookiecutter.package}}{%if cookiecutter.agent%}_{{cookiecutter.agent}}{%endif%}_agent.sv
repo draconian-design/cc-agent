@@ -19,7 +19,7 @@
  `include "{{ cookiecutter.package }}_{{ DRV }}.sv"
  `include "{{ cookiecutter.package }}_{{ SQR }}.sv"
 
-class {{ NAME }}_c extends uvm_component;
+class {{ NAME }}_c extends uvm_agent;
 
    string intf_name;
    virtual {{ INTF }} vif;
