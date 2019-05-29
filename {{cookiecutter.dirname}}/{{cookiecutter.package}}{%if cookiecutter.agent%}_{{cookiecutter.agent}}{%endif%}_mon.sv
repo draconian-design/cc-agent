@@ -13,7 +13,7 @@
 
  `include "{{ cookiecutter.package }}_{{ SEQ_ITEM }}.sv"
 
-class {{ MON }}_c extends uvm_monitor #({{ SEQ_ITEM }}_c);
+class {{ MON }}_c extends uvm_monitor;
 
    // Containing agent sets variable to avoid multiple lookup
    virtual {{ INTF }} vif;
@@ -27,10 +27,10 @@ class {{ MON }}_c extends uvm_monitor #({{ SEQ_ITEM }}_c);
       super.new(name, parent);
    endfunction : new
 
-   virtual task build_phase(uvm_phase phase);
+   virtual function void build_phase(uvm_phase phase);
       super.build_phase(phase);
       this.mon_item_port = new("mon_item_port", this);
-   endtask : build_phase
+   endfunction : build_phase
 
    virtual task run_phase(uvm_phase phase);
       forever begin

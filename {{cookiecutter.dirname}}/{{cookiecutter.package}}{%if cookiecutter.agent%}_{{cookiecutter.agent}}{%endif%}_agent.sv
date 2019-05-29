@@ -36,7 +36,7 @@ class {{ NAME }}_c extends uvm_agent;
       super.new(name, parent);
    endfunction : new
 
-   virtual task build_phase(uvm_phase phase);
+   virtual function void build_phase(uvm_phase phase);
       super.build_phase(phase);
       `cmn_get_intf(virtual {{ INTF }}, "{{ cookiecutter.package }}_pkg::{{ INTF }}", this.intf_name, this.vif)
       this.mon = {{ MON }}_c::type_id::create("mon", this);
@@ -47,14 +47,14 @@ class {{ NAME }}_c extends uvm_agent;
          this.sqr = {{ SQR }}_c::type_id::create("sqr", this);
          this.sqr.vif = this.vif; // Avoid additional db lookups
       end
-   endtask : build_phase
+   endfunction : build_phase
 
-   virtual task connect_phase(uvm_phase phase);
+   virtual function void connect_phase(uvm_phase phase);
       super.connect_phase(phase);
       if (this.get_is_active() == UVM_ACTIVE) begin
          this.drv.seq_item_port.connect(this.sqr.seq_item_export);
       end
-   endtask : connect_phase
+   endfunction : connect_phase
 
 endclass :  {{ NAME }}_c
 
