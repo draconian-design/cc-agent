@@ -13,8 +13,8 @@ interface {{ INTF }}(input logic clk, input logic rst_n);
    clocking drv_cb @(posedge clk);
    endclocking : drv_cb
 
-   clocking drv_cb @(posedge clk);
-   endclocking : drv_cb
+   clocking mon_cb @(posedge clk);
+   endclocking : mon_cb
 
 endinterface : {{ INTF }}
 
