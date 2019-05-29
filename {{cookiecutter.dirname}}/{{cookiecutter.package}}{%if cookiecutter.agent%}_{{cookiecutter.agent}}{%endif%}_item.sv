@@ -13,8 +13,8 @@ class {{ SEQ_ITEM }}_c extends uvm_sequence_item;
 
    `uvm_object_utils_begin({{ cookiecutter.package }}_pkg::{{ SEQ_ITEM }}_c)
     `uvm_field_object(uid, UVM_REFERENCE)
-   `uvm_object_utils_end({{ cookiecutter.package }}_pkg::{{ SEQ_ITEM }}_c)
-
+   `uvm_object_utils_end
+   
    function new(string name="{{ SEQ_ITEM }}", uvm_component parent);
       super.new(name, parent);
       uid = new("{{ cookiecutter.package | upper }}{% if cookiecutter.agent %}-{{ cookiecutter.agent | upper }}{% endif %}");
