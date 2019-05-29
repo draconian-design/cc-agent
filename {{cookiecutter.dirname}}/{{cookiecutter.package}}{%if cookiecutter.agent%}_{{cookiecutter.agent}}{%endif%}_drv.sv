@@ -29,7 +29,7 @@ class {{ DRV }}_c extends uvm_driver #({{ SEQ_ITEM }}_c);
       forever begin
          @(posedge this.vif.mon_cb.rst_n);
          fork
-            drvitor_thread();
+            driver_thread();
          join_none
          @(negedge this.vif.mon_cb.rst_n);
          disable fork;
