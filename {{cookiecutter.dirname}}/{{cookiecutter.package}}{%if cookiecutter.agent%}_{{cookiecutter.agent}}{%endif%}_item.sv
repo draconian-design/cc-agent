@@ -22,7 +22,7 @@ class {{ SEQ_ITEM }}_c extends uvm_sequence_item;
 
    virtual function string convert2string();
       `cmn_fatal(("FIXME convert2string not implemented"))
-   function : convert2string
+   endfunction : convert2string
 
 endclass :  {{ SEQ_ITEM }}_c
 
